@@ -13,9 +13,21 @@ function writePassword() {
 function generatePassword() {
   var Characters =
     "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var lowercase = confirm("lowercase?");
-  if ((lowercase = "false")) {
+  var lowercase = prompt("do you want to add lowercase", "yes or no");
+  if (lowercase == "no") {
     Characters = Characters.replace("abcdefghijklmnopqrstuvwxyz", "");
+  }
+  var uppercase = prompt("do you want to add uppercase", "yes or no");
+  if (uppercase == "no") {
+    Characters = Characters.replace("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "");
+  }
+  var numbers = prompt("do you want to add numbers", "yes or no");
+  if (numbers == "no") {
+    Characters = Characters.replace("123456789", "");
+  }
+  var special = prompt("do you want to add special", "yes or no");
+  if (special == "no") {
+    Characters = Characters.replace("!@#$%^&*()", "");
   }
   var passwordgen = "";
   var passwordLength = prompt("choose a number 8-128", "#");
