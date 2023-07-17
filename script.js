@@ -13,6 +13,10 @@ function writePassword() {
 function generatePassword() {
   var Characters =
     "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowercase = confirm("lowercase?");
+  if ((lowercase = "false")) {
+    Characters = Characters.replace("abcdefghijklmnopqrstuvwxyz", "");
+  }
   var passwordgen = "";
   var passwordLength = prompt("choose a number 8-128", "#");
   for (var i = 0; i <= passwordLength; i++) {
